@@ -1,0 +1,18 @@
+{
+    "java.project.sourcePaths": [
+        "TP-02 - Mongo/Punto1"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "TP-02 - Mongo\\Punto1\\gson-2.9.0.jar",
+        "TP-02 - Mongo\\Punto1\\unirest-java-1.4.9.jar",
+        "TP-02 - Mongo\\lib\\gson-2.9.0.jar",
+        "TP-02 - Mongo\\lib\\unirest-java-1.4.9.jar",
+        "TP-02 - Mongo\\lib\\httpcore-4.4.15.jar",
+        "TP-02 - Mongo\\lib\\httpclient-4.5.13.jar",
+        "TP-02 - Mongo\\lib\\httpmime-4.5.13.jar",
+        "TP-02 - Mongo\\lib\\httpcore-nio-4.4.15.jar",
+        "TP-02 - Mongo\\lib\\httpasyncclient-4.1.4.jar",
+        "TP-02 - Mongo\\lib\\commons-logging-1.2.jar"
+    ]
+}
