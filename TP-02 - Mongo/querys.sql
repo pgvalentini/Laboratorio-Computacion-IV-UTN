@@ -1,0 +1,10 @@
+
+CREATE	TABLE Pais (
+ codigoPais INTEGER PRIMARY KEY,
+ nombrePais VARCHAR(50) NOT NULL,
+ capitalPais VARCHAR(50) NOT NULL,
+ region VARCHAR(50) NOT NULL,
+ poblacion INTEGER NOT NULL,
+ latitud DECIMAL NOT NULL,
+ longitud DECIMAL NOT NULL
+);
