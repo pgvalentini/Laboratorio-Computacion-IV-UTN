@@ -13,6 +13,7 @@
         "TP-02 - Mongo\\lib\\httpmime-4.5.13.jar",
         "TP-02 - Mongo\\lib\\httpcore-nio-4.4.15.jar",
         "TP-02 - Mongo\\lib\\httpasyncclient-4.1.4.jar",
-        "TP-02 - Mongo\\lib\\commons-logging-1.2.jar"
+        "TP-02 - Mongo\\lib\\commons-logging-1.2.jar",
+        "TP-02 - Mongo\\lib\\mysql-connector-java-8.0.28.jar"
     ]
 }
