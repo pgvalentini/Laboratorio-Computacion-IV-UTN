@@ -15,6 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', apiRouter);
 
-app.listen(3006, () => {
-    console.log('Servidor arrancado en puerto 3006');
+app.listen(3001, () => {
+    console.log('Servidor arrancado en puerto 3001');
 });
