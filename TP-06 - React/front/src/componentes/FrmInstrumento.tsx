@@ -66,7 +66,7 @@ export const FrmInstrumento = () => {
                 <Form.Control type="Text" placeholder="Ingrese el costo de envío" defaultValue={instrumento?.costoEnvio} onChange={e => instrumento.costoEnvio = String(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCantidadVendida">
-                <Form.Label>Camtidad Vendida</Form.Label>
+                <Form.Label>Cantidad Vendida</Form.Label>
                 <Form.Control type="Text" placeholder="Ingrese la cantidad vendida" defaultValue={instrumento?.cantidadVendida} onChange={e => instrumento.cantidadVendida = Number(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicDescripción">
