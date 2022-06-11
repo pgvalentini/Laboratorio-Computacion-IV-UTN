@@ -1,0 +1,85 @@
+import { Injectable } from '@angular/core';
+import { instrumento } from '../components/modelo/intrumento';
+import  *  as  data  from  'src/assets/data.json';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class InstrumentosService {
+  
+  instrumentosFile:any  = (data  as  any).default;
+
+  constructor() {
+    console.log("Servicio Cargado!!!");
+    console.log(this.instrumentosFile);
+   }
+   
+  public getInstrumentos():any[]{
+    return this.instrumentosFile.instrumentos;
+    console.log(this.instrumentosFile.instrumentos);
+  }
+
+  public getPlatoXId(idx:string):any{
+      for(let instrumento of this.instrumentosFile.instrumentos){
+          if(instrumento.id == idx){
+            return instrumento;
+          } 
+      }
+  }
+
+  public async deleteInstrumentoPorId(id:number){
+    console.log("Eliminar Instrumento ID " + id);
+    let urlServer = this.instrumentosFile+id;
+    await fetch(urlServer, {
+      method: 'DELETE',
+          headers: {
+        'Content-type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+      },
+          mode: 'cors'
+    });
+  }
+  
+  public async  saveInstrumento(instrumento?: instrumento) {
+    let urlServer = this.instrumentosFile;
+    let method:string = "POST";
+    if(instrumento && instrumento.id > 0){
+      urlServer = this.instrumentosFile+instrumento?.id;
+      method = "PUT";
+    }
+    await fetch(urlServer, {
+      "method": method,
+      "body": JSON.stringify(instrumento),
+      "headers": {
+      "Content-Type": 'application/json'
+      }
+    });
+  }
+
+  public async deleteInsumo(id:number){
+    console.log("Baja Insumo ID " + id);
+    let urlServer = this.instrumentosFile+ id;
+    await fetch(urlServer, {
+      method: 'PUT',
+          headers: {
+        'Content-type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+      },
+          mode: 'cors'
+    });
+  }
+
+  public buscarInstrumento(termino:string):any[]{
+      let instrumentosArr:any[] = [];
+      termino = termino.toLowerCase();
+
+      for(let instrumento of this.instrumentosFile.platos){
+        let nombre = instrumento.nombre.toLowerCase();
+        if(nombre.indexOf(termino) >= 0){
+          instrumentosArr.push(instrumento);
+        }
+
+      }
+      return instrumentosArr;
+    }
+}
